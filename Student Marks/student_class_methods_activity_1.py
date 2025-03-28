@@ -18,7 +18,7 @@ class Student:
     students = [s1, s2, s3]
     student = Student #Stores the variable of the class Student 
 
-    for i in len(students):
+    for student in students: 
       print(f"Student Name: {student.name}, \nAge: {student.age}, \nSubject Major: {student.subject_major}")
 
 
