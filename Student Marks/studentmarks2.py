@@ -10,9 +10,21 @@ class Student:
       self.name = name
       self.marks = marks
 
-   def student_transcripts(self):  
-       print(f"Student Name: {self.name}")
-       print(f"Marks: {self.marks}")
+   #Methods section
+   def add_mark(self): #Takes a single value and adds it to the list of marks
+         new_mark = int(input("Enter a new mark:"))
+         self.marks.append(new_mark) #appends to the list of marks in the student instance
+         print(f"New mark added: to {self.name}'s list of marks: {self.marks}")
+   
+   def calculate_GPA(self): #Calculates the GPA of the student
+      total = sum(self.marks)
+      average = total/len(self.marks)
+      print(f"{self.name}'s GPA is: {average}")
+
+   def student_transcripts(self): #Prints out the student name and their new list of marks
+      print(f"Student Name: {self.name}")
+      print(f"Marks: {self.marks}")
+      print(f"GPA: {sum(self.marks)/len(self.marks)}")
 
 #Student Instances section
 student1 = Student("Alice", [85, 90, 78, 92]) 
@@ -26,52 +38,45 @@ student8 = Student("Hannah", [90, 88, 84, 91])
 student9 = Student("Ian", [78, 80, 76, 79])
 student10 = Student("Jack", [85, 82, 88, 86])
 
-#Functions section
-def add_mark(): #Takes a single value and adds it to the list of marks
-      new_mark = int(input("Enter a new mark:"))
-      self.marks.append(new_mark) #appends to the list of marks in the student instance
-      print(f"New mark added: to {self.name}'s list of marks: {self.marks}")
-
-def calculate_GPA(): #Calculates the GPA of the student
-      total = sum(self.marks)
-      average = total/len(self.marks)
-      print(f"{self.name}'s GPA is: {average}")
-
 #User Menu section
 def main():
-      print("Choose a student from the list below:")
-      while True:
-         try:
-            if choice == 1:
-               print("1. Alice")
-            elif choice == 2:
-               print("2. Bob")
-            elif choice == 3:
-               print("3. Charlie")
-            elif choice == 4:
-               print("4. David")
-            elif choice == 5:
-               print("5. Emma")
-            elif choice == 6:
-               print("6. Frank")
-            elif choice == 7:
-               print("7. Grace")
-            elif choice == 8:
-               print("8. Hannah")
-            elif choice == 9:
-               print("9. Ian")
-            elif choice == 10:
-               print("10. Jack")
-            else:
-               print("Invalid choice. Please try again.")
-         except ValueError:
-            print("Please input a number from 1-10. Not letters or symbols.")
+      students = [student1, student2, student3, student4, student5, 
+                  student6, student7, student8, student9, student10] #List of the students in Student Class
       
+      print("The students currently under your class: ")
+      for i, student in enumerate(students, start = 1):
+           print(f"{i}. {student.name}") #Creates a descending numbered list of the students from the Students instances section. Begins at index 1.
+
+      while True:
+               try:
+                    choice = int(input("Enter the corresponding number from the list above to access their records: "))
+                    if 1 <= choice <= len(students): #Checks if choice is within the length of the list of students
+                        """Each student has a list of marks and the user can choose to add a mark, calculate their GPA or print their transcript"""
+                        selected_student = students[choice - 1] #Subtracts 1 from the choice to get the index of the student in the list
+                        print("1. Add a mark")
+                        print("2. Calculate their GPA")
+                        print("3. Print their transcript")
+                        print("4. Exit the entire program")
+
+                        option = int(input("Enter the corresponding number to choose an option: "))
+                        if option == 1:
+                              selected_student.add_mark()
+                        elif option == 2:
+                              selected_student.calculate_GPA()
+                        elif option == 3:
+                              selected_student.student_transcripts()
+                        elif option == 4:
+                              break
+                        else:
+                              print("Invalid option. Please try again.")
+               except ValueError:
+                  print("Please only input numbers, not letters or symbols.")
+               
 
 
 # Debugging statements
 student1.student_transcripts() #Shows that it prints out the student's name and marks
-
+main()
 
 
 
