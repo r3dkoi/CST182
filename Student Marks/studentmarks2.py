@@ -27,21 +27,15 @@ student9 = Student("Ian", [78, 80, 76, 79])
 student10 = Student("Jack", [85, 82, 88, 86])
 
 #Functions section
-def choose_student(): #Allows user to choose a student instance
-    while True:
-        try:
-         choice = int(input("Choose a student from 1-10: "))
-         for choice in range(1, 10 - 1):
-             if choice == 1: 
-                 
-
-
-
-
 def add_mark(): #Takes a single value and adds it to the list of marks
       new_mark = int(input("Enter a new mark:"))
-      student
+      self.marks.append(new_mark) #appends to the list of marks in the student instance
+      print(f"New mark added: to {self.name}'s list of marks: {self.marks}")
 
+def calculate_GPA(): #Calculates the GPA of the student
+      total = sum(self.marks)
+      average = total/len(self.marks)
+      print(f"{self.name}'s GPA is: {average}")
 
 #User Menu section
 def main():
