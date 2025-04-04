@@ -49,15 +49,15 @@ print(f"\n6. The minimum amount of people per class was: {minimum_per_class}")
 print(f"\n7. The total count of males per class were: ")
 for pclass, count in male_count_per_class.items():
     print(f"   Class {pclass} = {count} males")
-print(f"\n9. The average amount of males per class were: {average_males_per_class:.1f}")
-print(f"\n11. The maximum amount of males per class were: {maximum_males_per_class}")
-print(f"\n13. The minimum amount of males per class were: {minimum_males_per_class}")
+print(f"\n8. The average amount of males per class were: {average_males_per_class:.1f}")
+print(f"\n9. The maximum amount of males per class were: {maximum_males_per_class}")
+print(f"\n10. The minimum amount of males per class were: {minimum_males_per_class}")
 
-print(f"\n8. The total count of females per class were: ")
+print(f"\n11. The total count of females per class were: ")
 for pclass, count in female_count_per_class.items():
     print(f"   Class {pclass} = {count} females")
-print(f"\n10. The average amount of females per class were: {average_females_per_class:.1f}")
-print(f"\n12. The maximum amount of females per class were: {maximum_females_per_class}")
+print(f"\n12. The average amount of females per class were: {average_females_per_class:.1f}")
+print(f"\n13. The maximum amount of females per class were: {maximum_females_per_class}")
 print(f"\n14. The minimum amount of females per class were: {minimum_females_per_class}")
 
 
