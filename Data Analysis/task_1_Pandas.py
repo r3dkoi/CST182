@@ -18,19 +18,11 @@ ratio_m_and_f = round((male_count.sum() / female_count.sum()),1)
 people_per_class = df.groupby('Pclass').size()
 
 
-#Finding the mean, max, min, and count of people per class [Groupby() method - mean,max,min,count practice]
-    # Calculate the average number of people per class
+#Finding the mean, max, min, and count of people per class [Groupby() method - mean,max,min practice]
+    # Calculate the aggregation of the data
 average_per_class = df.groupby('Pclass').size().mean()
-
-# Calculate the count of people in each class
-
-
-print(f"\n4. The average amount of people per class was: {average_per_class:.1f}")
-
-
-
-
-
+maximum_per_class = df.groupby('Pclass').size().max()
+minimum_per_class = df.groupby('Pclass').size().min()
 
 
 
@@ -42,5 +34,13 @@ print(f"\n2. The ratio of male to females passengers on board were: {ratio_m_and
 print(f"\n3. Number of people in each class: ")
 for pclass, count in people_per_class.items():
     print(f"   Class {pclass} = {count} people")
+print(f"\n4. The average amount of people per class was: {average_per_class:.1f}")
+print(f"\n5. The maximum amount of people per class was: {maximum_per_class}")
+print(f"\n6. The minimum amount of people per class was: {minimum_per_class}")
+
+
+
+
+
 
 
