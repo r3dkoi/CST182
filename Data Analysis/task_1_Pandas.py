@@ -10,11 +10,11 @@ print(df.head()) #debug statement + checking data we're working with
 #The no. of people aboard
 print(f"\n1. The number of people aboard was {len(df)}") 
 
-#Finding the ratio of male to females  [Selection of Data practice]
+#Finding the ratio of male to females  [Selection of Data]
 """This filters specifically the males and females from the dataset"""
 male_count = df['Sex'] == 'male' 
 female_count = df['Sex'] == 'female'
-ratio_m_and_f = male_count.sum() / female_count.sum()
+ratio_m_and_f = round((male_count.sum() / female_count.sum()),1)
 
 print(f"\n2. The ratio of male to females passengers on board were: {ratio_m_and_f}")
 
